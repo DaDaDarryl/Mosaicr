@@ -1,5 +1,5 @@
 # Mosaicr
-Create a mosaic of an input image generated from a folder of images.
+A command line app to create a mosaic of an input image generated from a folder of images.
 
 ## Description
 Written in .Net Core 3.51 on MacOS Big Sur 11.4.
@@ -8,39 +8,31 @@ Written in .Net Core 3.51 on MacOS Big Sur 11.4.
 
 ### Dependencies
 * Microsoft .Net Core 3.51
+* MacOS requires [libgdiplus packaging for macOS](https://github.com/CoreCompat/libgdiplus-packaging)
 
 ### Running the Program
-* dotnet Mosaicr.dll [options]
+* From a command promp/terminal: dotnet Mosaicr.dll [options]
 * Example usage
-** Default options: dotnet Mosaicr.dll -i sunset.jpg -o "sunset mosaic.jpg" -s path/to/folder/of/jpegs
-** Specifying mosaic size of 40x60 blocks: dotnet Mosaicr.dll -i sunset.jpg -o "sunset mosaic.jpg" -s path/to/folder/of/jpegs -bh 40 -bv 60
-** Specifying output jpeg quality of 80%: dotnet Mosaicr.dll -i sunset.jpg -o "sunset mosaic.jpg" -s path/to/folder/of/jpegs -q 80
+   * Display help: dotnet Mosaicr.dll -h
+   * Default options: dotnet Mosaicr.dll -i sunset.jpg -o "sunset mosaic.jpg" -s path/to/folder/of/jpegs
+   * Specifying mosaic size of 40x60 blocks: dotnet Mosaicr.dll -i sunset.jpg -o "sunset mosaic.jpg" -s path/to/folder/of/jpegs -bh 40 -bv 60
+   * Specifying output jpeg quality of 80%: dotnet Mosaicr.dll -i sunset.jpg -o "sunset mosaic.jpg" -s path/to/folder/of/jpegs -q 80
 
-## Help
-Options:
-Required:
--i
---input			        Path including filename of the image to mosaic
--o
---output		        Path including filename of the generated mosaic JPEG image
--s
---sourceFolder		  Path to a folder containing images to generate the mosaic. Can include subfolders
+## Command Line Options
+### Required
+* input: Path including filename of the image to mosaic
+* output: Path including filename of the generated mosaic JPEG image
+* sourceFolder: Path to a folder containing images to generate the mosaic. Can include subfolders
 
-Optional:
--bh
---blocksHorizontal	Number of mosaic blocks horizontally. Default=20
--bv
---blocksVertical	  Number of mosaic blocks vertically. Default=20
--q
---quality		        Quality of the output image: 0-100. Default=70 (0=lowest quality, smaller file size, 100=highest quality, larger file size)
+### Optional
+* blocksHorizontal: Number of mosaic blocks horizontally. Default=20
+* blocksVertical: Number of mosaic blocks vertically. Default=20
+* quality: Quality of the output image: 0-100. Default=70 (0=lowest quality, smaller file size, 100=highest quality, larger file size)
 
-## Authors
+## Author
 Darryl de Wet  
-ex. [@DaDaDarryl](https://twitter.com/dadadarryl)
+[@DaDaDarryl](https://twitter.com/dadadarryl)
 
 ## Version History
 * 0.1
     * Initial Release
-
-## License
-This project is licensed under the GNU License - see the LICENSE.md file for details
